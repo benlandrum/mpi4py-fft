@@ -19,7 +19,7 @@ jobs:
           - ubuntu-latest
           #- macos-latest
         mpi:
-          #- mpich
+          - mpich
           - openmpi
         python-version:
           - "3.7"
