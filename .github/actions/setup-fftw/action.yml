@@ -1,0 +1,13 @@
+---
+name: "Setup FFTW"
+description: "Set up FFTW."
+author: "Ben Landrum"
+inputs:
+  os:
+    description: "Operating system name (e.g., ubuntu-latest)."
+runs:
+  using: "composite"
+  steps:
+    - id: setup-fftw
+      run: ${GITHUB_ACTION_PATH}/setup-fftw.sh ${{ inputs.os }}
+      shell: bash

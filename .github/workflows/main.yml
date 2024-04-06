@@ -37,18 +37,9 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 
-    - run: |
-        # Install fftw
-        case $(uname) in
-          Linux)
-          sudo apt update && sudo apt install -y -q libfftw3-dev
-            ;;
-          Darwin)
-            brew install fftw
-            ;;
-        esac
-
-    - run: brew ls --verbose fftw
+    - uses: ./.github/actions/setup-fftw
+      with:
+        os: ${{ matrix.os }}
 
     - run: python -m pip install -U pip build
 
