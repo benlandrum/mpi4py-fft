@@ -53,7 +53,7 @@ jobs:
     - env:
         FFTW_INCLUDE_DIR: /usr/include/${{ matrix.mpi }}-x86_64
         FFTW_LIBRARY_DIR: /usr/lib64/${{ matrix.mpi }}/lib
-      run: python -m build
+      run: echo $FFTW_INCLUDE_DIR #python -m build
 
     - uses: mpi4py/setup-mpi@v1
       with:
