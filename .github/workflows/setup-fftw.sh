@@ -6,7 +6,9 @@ echo "called with $1"
 
 # mac-latest -> mac
 # ubuntu-latest -> ubuntu
-os=${$1%-*}
+#os=${$1%-*}
+
+os=mac-latest
 
 setup-apt-fftw () {
     sudo apt update && sudo apt install -y -q libfftw3-dev
