@@ -38,7 +38,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
 
     - run: |
-        # Install fftw3
+        # Install fftw
         case $(uname) in
           Linux)
           sudo apt update && sudo apt install -y -q libfftw3-dev
@@ -50,12 +50,7 @@ jobs:
 
     - run: python -m pip install -U pip build
 
-    - run: dpkg -L libfftw3-dev
-
-    - env:
-        FFTW_INCLUDE_DIR: /usr/include
-        FFTW_LIBRARY_DIR: /usr/lib
-      run: python -m build
+    - run: python -m build
 
     - uses: mpi4py/setup-mpi@v1
       with:
