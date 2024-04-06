@@ -6,7 +6,6 @@ echo "called with $1"
 
 # mac-latest -> mac
 # ubuntu-latest -> ubuntu
-#os=${$1%-*}
 
 os=mac-latest
 
