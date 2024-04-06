@@ -17,7 +17,7 @@ jobs:
       matrix:
         os:
           - ubuntu-latest
-          #- macos-latest
+          - macos-latest
         mpi:
           - mpich
           - openmpi
