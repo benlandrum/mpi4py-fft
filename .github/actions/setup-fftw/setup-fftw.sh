@@ -37,3 +37,6 @@ case $(uname) in
 esac
 
 setup-env-fftw
+
+echo all outputs
+cat $GITHUB_OUTPUT
