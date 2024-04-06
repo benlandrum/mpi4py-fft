@@ -56,6 +56,7 @@ def get_library_dirs():
         append(dirs, prefix, 'lib' + bits)
         append(dirs, prefix, 'lib', triplet)
         append(dirs, prefix, 'lib')
+    print("returning dirs", dirs)
     return dirs
 
 def get_fftw_libs():
