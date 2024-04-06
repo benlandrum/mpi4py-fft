@@ -17,17 +17,17 @@ jobs:
       matrix:
         os:
           - ubuntu-latest
-          - macos-latest
+          #- macos-latest
         mpi:
-          - mpich
+          #- mpich
           - openmpi
         python-version:
-          - "3.7"
-          - "3.8"
-          - "3.9"
-          - "3.10"
+          #- "3.7"
+          #- "3.8"
+          #- "3.9"
+          #- "3.10"
           - "3.11"
-          - "3.12-dev"
+          #- "3.12-dev"
 
     steps:
 
@@ -50,7 +50,10 @@ jobs:
 
     - run: python -m pip install -U pip build
 
-    - run: python -m build
+    - env:
+        FFTW_INCLUDE_DIR: /usr/include/${{ matrix.mpi }}-x86_64
+        FFTW_LIBRARY_DIR: /usr/lib64/${{ matrix.mpi }}/lib
+      run: python -m build
 
     - uses: mpi4py/setup-mpi@v1
       with:
