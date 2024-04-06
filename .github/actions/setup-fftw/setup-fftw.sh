@@ -1,13 +1,8 @@
 #!/bin/bash -eu
 
-echo num args $#
-
-echo "called with $1"
-
 # mac-latest -> mac
 # ubuntu-latest -> ubuntu
-
-os=mac-latest
+os=${1%-*}
 
 setup-apt-fftw () {
     sudo apt update && sudo apt install -y -q libfftw3-dev
@@ -20,10 +15,14 @@ setup-brew-fftw () {
 setup-env-fftw () {
     case "$os" in
 	mac)
-	    echo "FFTW_ROOT=$(brew --prefix fftw)" >> "$GITHUB_ENV"
+	    prefix=$(brew --prefix fftw)
+	    echo "include-dir=$prefix/include" >> "$GITHUB_OUTPUT"
+	    echo "library-dir=$prefix/lib" >> "$GITHUB_OUTPUT"
 	    ;;
 	ubuntu)
-	    # Paths picked up automatically.
+	    echo "include-dir=/usr/include" >> "$GITHUB_OUTPUT"
+	    echo "library-dir=/usr/lib/x86_64-linux-gnu" \
+		 >> "$GITHUB_OUTPUT"
 	    ;;
     esac
 }
