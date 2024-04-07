@@ -13,7 +13,6 @@ setup-brew-fftw () {
 }
 
 setup-env-fftw () {
-    exit 1
     case "$os" in
 	mac)
 	    prefix=$(brew --prefix fftw)
@@ -28,6 +27,7 @@ setup-env-fftw () {
 	*)
 	    echo os "$os" not recognized
 	    exit 1
+	    ;;
     esac
 }
 
@@ -37,6 +37,10 @@ case $(uname) in
 	;;
     Darwin)
 	setup-brew-fftw
+	;;
+    *)
+	echo uname $(uname) not recognized
+	exit 1
 	;;
 esac
 
