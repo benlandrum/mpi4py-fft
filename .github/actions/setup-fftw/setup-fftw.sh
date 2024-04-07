@@ -1,6 +1,6 @@
 #!/bin/bash -eu
 
-# mac-latest -> mac
+# macos-latest -> mac
 # ubuntu-latest -> ubuntu
 os=${1%-*}
 
@@ -14,7 +14,7 @@ setup-brew-fftw () {
 
 setup-env-fftw () {
     case "$os" in
-	mac)
+	macos)
 	    prefix=$(brew --prefix fftw)
 	    echo "include-dir=$prefix/include" >> "$GITHUB_OUTPUT"
 	    echo "library-dir=$prefix/lib" >> "$GITHUB_OUTPUT"
