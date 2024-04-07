@@ -18,7 +18,3 @@ runs:
     - id: setup-fftw
       run: ${GITHUB_ACTION_PATH}/setup-fftw.sh ${{ inputs.os }}
       shell: bash
-
-    - id: test-output
-      run: echo ${{ steps.setup-fftw.outputs.include-dir }}
-      shell: bash
