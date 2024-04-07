@@ -13,6 +13,7 @@ setup-brew-fftw () {
 }
 
 setup-env-fftw () {
+    exit 1
     case "$os" in
 	mac)
 	    prefix=$(brew --prefix fftw)
@@ -24,6 +25,9 @@ setup-env-fftw () {
 	    echo "library-dir=/usr/lib/x86_64-linux-gnu" \
 		 >> "$GITHUB_OUTPUT"
 	    ;;
+	*)
+	    echo os "$os" not recognized
+	    exit 1
     esac
 }
 
