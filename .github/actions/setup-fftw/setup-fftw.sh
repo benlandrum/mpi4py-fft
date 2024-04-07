@@ -1,6 +1,6 @@
 #!/bin/bash -eu
 
-# macos-latest -> mac
+# macos-latest -> macos
 # ubuntu-latest -> ubuntu
 os=${1%-*}
 
@@ -45,6 +45,3 @@ case $(uname) in
 esac
 
 setup-env-fftw
-
-echo all outputs $GITHUB_OUTPUT
-cat $GITHUB_OUTPUT
