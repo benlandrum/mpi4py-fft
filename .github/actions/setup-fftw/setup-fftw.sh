@@ -38,5 +38,5 @@ esac
 
 setup-env-fftw
 
-echo all outputs
+echo all outputs $GITHUB_OUTPUT
 cat $GITHUB_OUTPUT
