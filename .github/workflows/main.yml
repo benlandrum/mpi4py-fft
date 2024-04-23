@@ -56,7 +56,9 @@ jobs:
 
     - run: echo include dir $FFTW_INCLUDE_DIR lib dir $FFTW_LIBRARY_DIR
 
-    - run: find / -name '*fftw*' 2>/dev/null
+    - run: find $FFTW_INCLUDE_DIR -name '*fftw*' 2>/dev/null
+
+    - run: find $FFTW_LIBRARY_DIR -name '*fftw*' 2>/dev/null
 
     - run: python -m pip install -U pip build
 
