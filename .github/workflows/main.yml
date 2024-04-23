@@ -42,7 +42,7 @@ jobs:
         case $(uname) in
           Linux)
             sudo apt update
-            sudo apt install -y -q fftw-dev
+            sudo apt install -y -q libfftw3-dev
             echo FFTW_INCLUDE_DIR=/usr/include              >> $GITHUB_ENV
             echo FFTW_LIBRARY_DIR=/usr/lib/x86_64-linux-gnu >> $GITHUB_ENV
             ;;
