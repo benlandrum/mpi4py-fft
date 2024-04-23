@@ -48,7 +48,7 @@ jobs:
             ;;
           Darwin)
             brew install fftw
-            local prefix=$(brew --prefix fftw)
+            prefix=$(brew --prefix fftw)
             echo FFTW_INCLUDE_DIR=$prefix/include >> $GITHUB_ENV
             echo FFTW_LIBRARY_DIR=$prefix/lib     >> $GITHUB_ENV
             ;;
