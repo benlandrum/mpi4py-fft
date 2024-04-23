@@ -54,6 +54,8 @@ jobs:
             ;;
         esac
 
+    - run: echo include dir $FFTW_INCLUDE_DIR
+
     - run: python -m pip install -U pip build
 
     - run: python -m build
